@@ -1,0 +1,7 @@
+---
+- name:  Check Remote Clients Connectivity Status 
+  hosts: all
+
+  tasks:
+  - name: Test Connectivity
+    ping:
