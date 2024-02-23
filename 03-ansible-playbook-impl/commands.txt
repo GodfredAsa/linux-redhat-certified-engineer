@@ -1,0 +1,3 @@
+ansible-playbook --syntax-check first.yaml  # check syntax error 
+ansible-playbook --check first.yaml # tells if syntax was good 
+ansible-playbook absolute_path_to_file/first.yaml # use absolute path if not in the dir of the playbook

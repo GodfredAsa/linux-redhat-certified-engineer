@@ -1,0 +1,25 @@
+---
+- name: Install and start Apache HTTP server (httpd) on CentOS
+  hosts: localhost
+
+  tasks:
+    - name: Install httpd package
+      yum:
+        name: httpd
+        state: present
+
+    - name: Ensure httpd service is enabled and started
+      service:
+        name: httpd
+        state: started
+        enabled: true
+
+    - name: Check if httpd service is started
+      systemd:
+        name: httpd
+        state: started
+      register: httpd_status
+
+    - name: Display httpd service status
+      debug:
+        msg: "HTTPD service is {{ httpd_status.state }}"
