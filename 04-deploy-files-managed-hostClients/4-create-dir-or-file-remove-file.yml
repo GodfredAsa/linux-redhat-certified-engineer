@@ -1,0 +1,32 @@
+# THE RELEVANCE OF EXERCISE IS THE CREATION OF A FILE TO DO SOMETHING AND AFTERS DELETING IT.
+---
+- name: Creating a Directory 
+  hosts: all 
+
+  tasks:
+    - name: Create Directory
+      file: 
+        path: /tmp/seinfeld
+        state: directory
+        group: vagrant
+        owner: vagrant
+        mode: 770
+
+    - name: Create a file in the above created Directory
+      file: 
+        path: /tmp/seinfeld/jerry
+        state: touch
+
+    - name: Stat the new file created
+      stat: 
+        path: /tmp/seinfeld/jerry
+      register: jf
+
+    - name: Show File Status 
+      debug: 
+        msg: "File Status & Attributes {{ jf }}"
+
+    - name: remove file 
+      file: 
+        path: /tmp/seinfeld/jerry
+        state: absent

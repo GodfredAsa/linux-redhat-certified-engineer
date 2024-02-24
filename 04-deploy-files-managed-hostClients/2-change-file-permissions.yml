@@ -1,0 +1,15 @@
+# The idea of this exercise is to change the permission of a file in remote servers or clients 
+
+---
+- name: Change File Permission
+  hosts: all
+
+  tasks:
+   - name: File Permissions
+     file: 
+      path: /home/vagrant/linux2
+      mode: a+w
+
+
+      # -rw-rw-r--. 1 vagrant vagrant 34 Feb 24 00:29 linux2
+      # -rw-rw-rw-. 1 vagrant vagrant 34 Feb 24 00:29 linux2
