@@ -1,0 +1,17 @@
+# create the shell script in the slave remote server and write the a playbook to run it the master node or control plane.
+---
+- name: playbook for shell script 
+  hosts: localhost
+
+  tasks:
+   - name: run shell script
+     shell: "/home/vagrant/cfile.sh"
+     ignore_errors: yes
+
+   - name: Debug shell script path
+     debug:
+       msg: "Shell script path: {{ ansible_env.HOME }}/cfile.sh"
+
+   - name: Print something on the screen
+     debug:
+      msg: Print Godfred on the screen
