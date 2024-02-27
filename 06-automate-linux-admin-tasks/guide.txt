@@ -1,0 +1,13 @@
+Imagine you have to create a user in 100 linux machines of VM
+Would you likely login to all the VMs and manually create the users or 
+automate the process rather.
+Login into all the 100 machines to create the user is unproductive 
+
+Checking if a user exists in our VM
+
+id userName
+
+Example: id vagrant 
+View Lists of users: cat /etc/passwd
+Search Format in Linux: grep vagrant /etc/passwd
+Login as created user george: ssh myuser@vm_ip_address, then enter the password.
