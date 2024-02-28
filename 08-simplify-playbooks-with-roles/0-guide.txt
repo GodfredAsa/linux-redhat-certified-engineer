@@ -1,0 +1,18 @@
+The reason why tasks was not included in the yml files was that its placed in a task directory in the VM.
+
+After creating the yml files based in the tasks directory under the roles/basicinstall/tasks/main.yml 
+
+we create a playbook to use those files in the playbooks directory in the ansible playbooks directory 
+
+NB: Although here the individual files are not named main.yml in practice should be named main.yml as directed in the attached pdf.
+
+REMOVING http service 
+</> firewall-cmd --permanent --remove-service=http
+
+</> yum remove httpd
+
+List all services 
+firewall-cmd --list-all
+
+RELOAD SERVICE 
+firewall-cmd --reload
