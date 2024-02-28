@@ -1,0 +1,21 @@
+---
+- name: Install httpd, telnet and start httpd 
+  hosts: all
+
+  tasks:
+    - name: Install httpd
+      yum: 
+        name: httpd
+        state: present 
+    
+    - name: Start httpd 
+      service: 
+      state: started
+
+    - name: Install telnet 
+      yum:
+        name: telnet
+        state: present 
+
+# to run a particular task in the play book 
+# anisble-playbook yamlfile.yml --start-at-task "Task name"
